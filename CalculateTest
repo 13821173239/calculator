@@ -1,0 +1,36 @@
+package calculate;
+
+import junit.framework.TestCase;
+
+public class CalculateTest extends TestCase {
+	private static Calculate calculate1=new Calculate();
+
+	protected void setUp() throws Exception {
+		calculate1.opClean();
+	}
+
+	protected void tearDown() throws Exception {
+		super.tearDown();
+	}
+
+	public void testOpAdd() {
+		fail("Not yet implemented");
+	}
+
+	public void testOpSubtract() {
+		fail("Not yet implemented");
+	}
+
+	public void testOpMultiply() {
+		fail("Not yet implemented");
+	}
+
+	public void testOpDivide() {
+		
+		String a="10";
+		String b="0";
+		System.out.println(calculate1.opDivide(a));
+		System.out.println(calculate1.opDivide(b));
+	}
+
+}
