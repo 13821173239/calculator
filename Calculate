@@ -1,0 +1,70 @@
+package calculate;
+
+public class Calculate {
+
+	private String result = "0";
+    private int op = 0, add = 1, sub = 2, mul = 3, div = 4;
+
+    private double stringToDouble(String x) {
+        double y = Double.parseDouble(x);
+        return y;
+    }
+    private void operate(String x) {
+        double x1 = stringToDouble(x);
+        double y = stringToDouble(result);
+        switch (op) {
+            case 0:
+                result = x;
+                break;
+            case 1:
+                result = String.valueOf(y + x1);
+                break;
+            case 2:
+                result = String.valueOf(y - x1);
+                break;
+            case 3:
+                result = String.valueOf(y * x1);
+                break;
+            case 4:
+                if (x1 != 0) {
+                    result = String.valueOf(y / x1);
+                } else {
+                    result = "除数不能为0";
+                }
+                break;
+        }
+    }
+    public String opAdd(String x) {
+        operate(x);
+        op = add;
+        return result;
+    }
+
+    public String opSubtract(String x) {
+        operate(x);
+        op = sub;
+        return result;
+    }
+
+    public String opMultiply(String x) {
+        operate(x);
+        op = mul;
+        return result;
+    }
+    public String opDivide(String x) {
+        operate(x);
+        op = div;
+        return result;
+    }
+
+    public String opEquals(String x) {
+        operate(x);
+        op = 0;
+        return result;
+    }
+
+    public void opClean() {
+        op = 0;
+        result = "0";
+    }
+}
